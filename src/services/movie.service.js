@@ -51,7 +51,14 @@ const createMovie = async (data) => {
     runtime: runtime,
     gross: gross,
   })
-
-  //   Movie.query()
 }
-export { findAll, FindMovieDetailByID, createMovie }
+
+const DeleteMovie = async (movieName) => {
+  console.log(movieName)
+  Movie.destroy({
+    where: {
+      movies: movieName,
+    },
+  })
+}
+export { findAll, FindMovieDetailByID, createMovie, DeleteMovie }
