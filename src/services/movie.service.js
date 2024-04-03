@@ -1,3 +1,4 @@
+import { where } from "sequelize"
 import db from "../models/index.js"
 
 const { Movie } = db.db
@@ -8,4 +9,21 @@ const findAll = async () =>
     limit: 100,
   })
 
-export { findAll }
+const FindMovieDetailByID = async (movieName) =>
+  Movie.findAll({
+    attributes: [
+      "movies",
+      "year",
+      "genre",
+      "rating",
+      "one_line",
+      "stars",
+      "votes",
+      "runtime",
+      "gross",
+    ],
+    where: {
+      movies: movieName,
+    },
+  })
+export { findAll, FindMovieDetailByID }
