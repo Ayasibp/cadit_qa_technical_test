@@ -6,7 +6,7 @@
   "exports": "./src/server.js",
   "scripts": {
     "start": "npm run migration && node src/server.js",
-    "local": "npm run migration && nodemon src/server.js",
+    "local": "npm run nodemon src/server.js",
     "test": "npm run migration && NODE_ENV=test mocha tests/*  -r dotenv/config --timeout 1000 --recursive --exit",
     "migration": "npx sequelize-cli db:migrate",
     "migration:undo": "npx sequelize-cli db:migrate:undo",

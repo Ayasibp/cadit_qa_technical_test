@@ -28,4 +28,5 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
   })
+  return Movie
 }
