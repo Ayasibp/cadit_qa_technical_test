@@ -5,7 +5,7 @@ import * as reponse from "../middlewares/response-handler.js"
 import {
   findAll,
   FindMovieDetailByID,
-  create,
+  createMovie,
 } from "../services/movie.service.js"
 
 const responseHandler = reponse.default
@@ -27,8 +27,7 @@ const getMovie = async (req, res) => {
 }
 
 const addMovie = async (req, res) => {
-  //   console.log(req.body)
-  const movieDetail = await create(req.body)
+  const movieDetail = await createMovie(req)
   res.status(httpStatus.CREATED).send(responseHandler(movieDetail))
 }
 

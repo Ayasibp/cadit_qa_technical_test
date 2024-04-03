@@ -27,8 +27,31 @@ const FindMovieDetailByID = async (movieName) =>
     },
   })
 
-const create = async (data) => {
-  //   console.log(data)
-  Movie.create(data)
+const createMovie = async (data) => {
+  const {
+    movies,
+    year,
+    genre,
+    rating,
+    one_line,
+    stars,
+    votes,
+    runtime,
+    gross,
+  } = data.body
+
+  Movie.create({
+    movies: movies,
+    year: year,
+    genre: genre,
+    rating: rating,
+    one_line: one_line,
+    stars: stars,
+    votes: votes,
+    runtime: runtime,
+    gross: gross,
+  })
+
+  //   Movie.query()
 }
-export { findAll, FindMovieDetailByID, create }
+export { findAll, FindMovieDetailByID, createMovie }

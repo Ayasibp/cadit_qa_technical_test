@@ -4,6 +4,7 @@ export default (sequelize, DataTypes) => {
     {
       movies: {
         type: DataTypes.STRING,
+        primaryKey: true,
       },
       year: {
         type: DataTypes.TEXT,
