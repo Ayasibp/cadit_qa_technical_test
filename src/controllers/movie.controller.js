@@ -2,7 +2,11 @@ import httpStatus from "http-status"
 
 import * as errors from "../utils/api-error.js"
 import * as reponse from "../middlewares/response-handler.js"
-import { findAll, FindMovieDetailByID } from "../services/movie.service.js"
+import {
+  findAll,
+  FindMovieDetailByID,
+  create,
+} from "../services/movie.service.js"
 
 const responseHandler = reponse.default
 
@@ -22,4 +26,10 @@ const getMovie = async (req, res) => {
   res.status(httpStatus.OK).send(responseHandler(movie))
 }
 
-export { getMovies, getMovie }
+const addMovie = async (req, res) => {
+  //   console.log(req.body)
+  const movieDetail = await create(req.body)
+  res.status(httpStatus.CREATED).send(responseHandler(movieDetail))
+}
+
+export { getMovies, getMovie, addMovie }

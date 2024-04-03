@@ -32,6 +32,8 @@ export default (sequelize, DataTypes) => {
     },
     {
       tableName: "movies",
+      freezeTableName: true,
+      timestamps: false,
     }
   )
   return Movie
