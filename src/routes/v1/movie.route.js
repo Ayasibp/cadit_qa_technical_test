@@ -3,6 +3,7 @@ import { Validator } from "express-json-validator-middleware"
 
 import {
   addMovie,
+  deleteMovie,
   getMovie,
   getMovies,
 } from "../../controllers/movie.controller.js"
@@ -16,6 +17,6 @@ router
   .post(validate({ body: addMovieSchema }), addMovie)
   .get(getMovies)
 
-router.route("/:movieName").get(getMovie)
+router.route("/:movieName").get(getMovie).delete(deleteMovie)
 
 export default router

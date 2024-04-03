@@ -6,6 +6,7 @@ import {
   findAll,
   FindMovieDetailByID,
   createMovie,
+  DeleteMovie,
 } from "../services/movie.service.js"
 
 const responseHandler = reponse.default
@@ -31,4 +32,10 @@ const addMovie = async (req, res) => {
   res.status(httpStatus.CREATED).send(responseHandler(movieDetail))
 }
 
-export { getMovies, getMovie, addMovie }
+const deleteMovie = async (req, res) => {
+  const movie = await DeleteMovie(req.params.movieName)
+
+  res.status(httpStatus.CREATED).send(responseHandler(movie))
+}
+
+export { getMovies, getMovie, addMovie, deleteMovie }
