@@ -1,4 +1,6 @@
-export default (body) => ({
+const responseHandler = (body) => ({
   success: true,
   body,
 })
+
+export default responseHandler

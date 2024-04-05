@@ -1,15 +1,13 @@
 import httpStatus from "http-status"
 
 import * as errors from "../utils/api-error.js"
-import * as reponse from "../middlewares/response-handler.js"
+import responseHandler from "../middlewares/response-handler.js"
 import {
   findAll,
   FindMovieDetailByID,
   createMovie,
   DeleteMovie,
 } from "../services/movie.service.js"
-
-const responseHandler = reponse.default
 
 const { NotFoundError } = errors.default
 
