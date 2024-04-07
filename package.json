@@ -6,10 +6,7 @@
   "exports": "./src/server.js",
   "scripts": {
     "start": "nodemon src/server.js",
-    "local": "npm run nodemon src/server.js",
-    "test": "jest --verbose",
-    "migration": "npx sequelize-cli db:migrate",
-    "migration:undo": "npx sequelize-cli db:migrate:undo",
+    "test": "jest",
     "coverage": "c8 --reporter lcov --reporter text --reporter html npm test",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
